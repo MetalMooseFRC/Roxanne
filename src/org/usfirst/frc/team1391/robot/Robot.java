@@ -40,6 +40,7 @@ public class Robot extends TimedRobot {
     public static final Clamp myClamp = new Clamp();
     public static final NetworkTable limelight = NetworkTableInstance.getDefault().getTable("limelight");
     public static final VisionSystemClient myVisionSystemClient = new VisionSystemClient();
+    //get network table values
     public static NetworkTableEntry tx = limelight.getEntry("tx");
     public static NetworkTableEntry ty = limelight.getEntry("ty");
     public static NetworkTableEntry ta = limelight.getEntry("ta");

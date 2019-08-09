@@ -50,7 +50,8 @@ public class OI {
 
         // Controls the fourbar
         fourbarButton.whenPressed(new FourbarLower());
-        bottomLeft.whenPressed(new LarryAndWinston(-1));
-        bottomRight.whenPressed(new LarryAndWinston(1));
+        
+        //lineup command
+        bottomLeft.whenPressed(new LarryAndWinston());
     }
 }

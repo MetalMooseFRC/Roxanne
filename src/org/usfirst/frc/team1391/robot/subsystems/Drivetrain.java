@@ -28,6 +28,7 @@ public class Drivetrain extends Subsystem {
     public Encoder myEncoder = new Encoder(RobotMap.drivetrainEncoderAPort, RobotMap.drivetrainEncoderBPort, false, Encoder.EncodingType.k4X);
     public AHRS myAHRS = new AHRS(SPI.Port.kMXP);
     
+    //initialize custom PIDSource objects
     public LimelightAngle myLimeAngle = new LimelightAngle();
     public LimelightDistance myLimeDist = new LimelightDistance();
 
@@ -35,7 +36,7 @@ public class Drivetrain extends Subsystem {
     public PIDController encoderPID = new PIDController(RobotMap.drivetrainEncoderP, RobotMap.drivetrainEncoderI, RobotMap.drivetrainEncoderD, 0, myEncoder, new BlankPIDOutput());
     public PIDController gyroPID = new PIDController(RobotMap.drivetrainGyroP, RobotMap.drivetrainGyroI, RobotMap.drivetrainGyroD, 0, myAHRS, new BlankPIDOutput());
     
-    //long distance values
+    //long distance lineup PID values
     public PIDController limeAnglePID = new PIDController(0.1, 0.001, 0, 0, myLimeAngle, new BlankPIDOutput());
     public PIDController limeDistPID = new PIDController(0.04, 0.0001, 0, 0, myLimeDist, new BlankPIDOutput());
     
@@ -57,10 +58,12 @@ public class Drivetrain extends Subsystem {
         // Sets myEncoder to output distance traveled in inches
         myEncoder.setDistancePerPulse(RobotMap.drivetrainEncoderCoefficient);
         
+        //limelight theta tolerance
         limeAnglePID.setAbsoluteTolerance(3.5);
         limeAnglePID.setOutputRange(-1, 1);
         limeAnglePID.setInputRange(-24.85, 24.85);
         
+        //limelight distance tolerance
         limeDistPID.setAbsoluteTolerance(3);
         limeDistPID.setOutputRange(-0.75, 0.75);
     }

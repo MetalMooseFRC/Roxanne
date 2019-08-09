@@ -3,7 +3,7 @@ package org.usfirst.frc.team1391.robot;
 import edu.wpi.first.wpilibj.PIDSource;
 import edu.wpi.first.wpilibj.PIDSourceType;;
 public class LimelightAngle implements PIDSource {
-	
+	//input is displacement
 	PIDSourceType pidSource = PIDSourceType.kDisplacement;
 
 	@Override
@@ -21,9 +21,9 @@ public class LimelightAngle implements PIDSource {
 
 	@Override
 	public double pidGet() {
-		// TODO Auto-generated method stub
+		// get the network table limelight angle
+		
 		//System.out.println("Theta: " + Robot.tx.getDouble(0.0));
-
 		return Robot.tx.getDouble(0.0);
 	}
 

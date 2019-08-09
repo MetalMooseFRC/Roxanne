@@ -5,6 +5,7 @@ import edu.wpi.first.wpilibj.PIDSourceType;
 
 public class LimelightDistance implements PIDSource {
 	
+	//input is displacement
 	PIDSourceType pidSource = PIDSourceType.kDisplacement;
 	@Override
 	public void setPIDSourceType(PIDSourceType pidSource) {
@@ -20,7 +21,7 @@ public class LimelightDistance implements PIDSource {
 
 	@Override
 	public double pidGet() {
-		// TODO Auto-generated method stub
+		//Get distance from FOV angle of the target using ratios
         double vert = Robot.tvert.getDouble(0.0);
 		double angleToTop = (vert *49.7)/(480) * Math.PI / 180;
 		 
