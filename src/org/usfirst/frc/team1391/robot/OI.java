@@ -52,6 +52,6 @@ public class OI {
         fourbarButton.whenPressed(new FourbarLower());
         
         //lineup command
-        bottomLeft.whenPressed(new LarryAndWinston());
+        bottomLeft.whenPressed(new DriveToTarget());
     }
 }

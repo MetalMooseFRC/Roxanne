@@ -7,14 +7,14 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class LarryAndWinston extends Command {
+public class DriveToTarget extends Command {
 	double direction;
 	double startDistance;
 	double startingAngleOffTarget;
 	
 	int tic;
 	
-    public LarryAndWinston() {
+    public DriveToTarget() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     	requires(Robot.myDrivetrain);
